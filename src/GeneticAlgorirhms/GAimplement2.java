@@ -9,7 +9,7 @@ import Select.selectOperator;
 import Select.tournament_elitism;
 import Representation.Individual;
 import Representation.Population;
-import TSPMain.TSPData;
+import TSP_EA.TSPData;
 
 public class GAimplement2 implements GA {
 	public Individual start(Population citylist)

@@ -1,6 +1,6 @@
 package Representation;
 
-import TSPMain.TSPData;
+import TSP_EA.TSPData;
 
 /**
  * 种群类

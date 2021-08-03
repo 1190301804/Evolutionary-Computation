@@ -8,7 +8,7 @@ import Select.fitness_proportional;
 import Select.selectOperator;
 import Representation.Individual;
 import Representation.Population;
-import TSPMain.TSPData;
+import TSP_EA.TSPData;
 
 public class GAimplement3 implements GA{
 	 @Override

@@ -4,7 +4,7 @@ import java.util.Random;
 
 import Representation.Individual;
 import Representation.Population;
-import TSPMain.TSPData;
+import TSP_EA.TSPData;
 
 
 

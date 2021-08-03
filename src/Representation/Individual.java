@@ -1,5 +1,5 @@
 package Representation;
-import TSPMain.TSPData;
+import TSP_EA.TSPData;
 
 import java.util.Random;
 
