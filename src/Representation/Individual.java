@@ -1,4 +1,6 @@
-package TSPMain;
+package Representation;
+import TSPMain.TSPData;
+
 import java.util.Random;
 
 /**
@@ -24,7 +26,7 @@ public class Individual {
     }
 
     //初始物种基因(随机)
-    void createByRandomGenes()
+    public void createByRandomGenes()
     {
         //初始化基因为1-CITY_NUM序列
         for(int i = 0;i < genes.length;i++)
@@ -78,7 +80,7 @@ public class Individual {
     }
 
     //打印路径
-    void printRate()
+    public void printRate()
     {
         System.out.print("最短路线：");
         for(int i=0;i<genes.length;i++)

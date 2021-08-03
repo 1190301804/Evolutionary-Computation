@@ -1,11 +1,11 @@
-package Crossover;
+package CrossoverOperate;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import TSPMain.Individual;
-import TSPMain.Population;
+import Representation.Individual;
+import Representation.Population;
 import TSPMain.TSPData;
 
 /**
@@ -16,7 +16,7 @@ public class EdgeRecombination implements CrossoverOperator{
 
 	@Override
 	public void crossover(Population list) {
-    	//以概率pcl~pch进行
+    	//pcl~pch的概率
         float rate=(float)Math.random();
         if(rate > TSPData.pcl && rate < TSPData.pch)
         {           

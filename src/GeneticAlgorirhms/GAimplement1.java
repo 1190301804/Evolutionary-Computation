@@ -1,25 +1,23 @@
-package TSPMain;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+package GeneticAlgorirhms;
 
-import Crossover.*;
+import CrossoverOperate.*;
 import Mutation.*;
 import Select.fitness_proportional;
 import Select.selectOperator;
-import Select.tournament_elitism;
+import Representation.Individual;
+import Representation.Population;
+import TSPMain.TSPData;
 
 /**
  * 遗传算法类
  */
 
-public class GeneticAlgorithm {
-
-        //开始遗传
-        public Individual run(Population list)
+public class GAimplement1 implements GA{
+	   @Override
+	   public Individual start(Population citylist)
         {
             //创建初始种群
-            createBeginningSpecies(list);
+            createBeginningSpecies(citylist);
 
             for(int i=1;i<=TSPData.DEVELOP_NUM;i++)
             {
@@ -31,7 +29,7 @@ public class GeneticAlgorithm {
             	
             	selectOperator se = new fitness_proportional(); 
             	//selectOperator se = new tournament_elitism();
-                Individual temp = select(list, se);
+                Individual temp = se.select(citylist);
 
                 
                 /*交叉
@@ -42,11 +40,11 @@ public class GeneticAlgorithm {
                  * Edge Recombination算子：EdgeRecombination类
                 */
                 
-                CrossoverOperator co = new Cycle();
+                CrossoverOperator co = new CycleCrossover();
                 //CrossoverOperator co = new PMX();
                 //CrossoverOperator co = new Order();
                 //CrossoverOperator co = new EdgeRecombination();
-                crossover(list, co);
+                co.crossover(citylist);
 
                 
                 /*变异
@@ -61,15 +59,15 @@ public class GeneticAlgorithm {
                 //MutateOperator mu = new swap(); 
                 MutateOperator mu = new inversion(); 
                 //MutateOperator mu = new scramble(); 
-                mutate(list, mu);
+                mu.mutate(citylist);
 
-                replace(list, temp);
+                replace(citylist, temp);
                 if(i % 200 == 0)
-                	System.out.println("第"+i+"次迭代结果为："+getBest(list).distance);
+                	System.out.println("第"+i+"次迭代结果为："+getBest(citylist).distance);
 
             }   
-
-            return getBest(list);
+            
+            return getBest(citylist);
         }
 
         //创建初始种群
@@ -112,23 +110,6 @@ public class GeneticAlgorithm {
             }
         }
 
-        //选择优秀物种
-        Individual select(Population list, selectOperator se){
-        	return se.select(list);
-        }
-
-        //交叉操作
-        void crossover(Population list, CrossoverOperator co)
-        {
-            co.crossover(list);
-        }
-
-        //变异操作
-        void mutate(Population list, MutateOperator mu)
-        {   
-            mu.mutate(list);
-        }
-
         //删除list中的最小项，用当前迭代下的最优路径进行替换
         void replace(Population list, Individual best){
             float maxDis = 0;
@@ -155,8 +136,6 @@ public class GeneticAlgorithm {
             }
 
         }
-
-        //获得适应度最大的物种
         Individual getBest(Population list)
         {
             float distance=Float.MAX_VALUE;

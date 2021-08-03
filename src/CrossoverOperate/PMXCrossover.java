@@ -1,28 +1,27 @@
-package Crossover;
+package CrossoverOperate;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
 import java.util.Random;
 
-import TSPMain.Individual;
-import TSPMain.Population;
+import Representation.Individual;
+import Representation.Population;
 import TSPMain.TSPData;
 
 /**
  * PMX Crossover
  */
 
-public class PMX implements CrossoverOperator{
+public class PMXCrossover implements CrossoverOperator{
 
 	@Override
 	public void crossover(Population list) {
-    	//以概率pcl~pch进行
+    	//pcl~pch的概率
         float rate=(float)Math.random();
         if(rate > TSPData.pcl && rate < TSPData.pch)
-        {           
+        {
+			Random rand=new Random();
         	Individual point=list.head.next;//游标
-            Random rand=new Random();
             int find=rand.nextInt(list.speciesNum);
             while(point != null && find != 0)//寻找表尾结点
             {

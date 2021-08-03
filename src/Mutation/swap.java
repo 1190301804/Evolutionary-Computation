@@ -2,33 +2,30 @@ package Mutation;
 
 import java.util.Random;
 
-import TSPMain.Individual;
-import TSPMain.Population;
+import Representation.Individual;
+import Representation.Population;
 import TSPMain.TSPData;
 
-/**
- * swap mutation
- */
+
 
 public class swap implements MutateOperator{
 
 	@Override
-	public void mutate(Population list) {
-		// TODO Auto-generated method stub
+	public void mutate(Population poplist) {
 		//每一物种均有变异的机会,以概率pm进行
-        Individual point=list.head.next;
+        Individual point=poplist.head.next;
         while(point != null)
         {
             float rate=(float)Math.random();
             //变异
             if(rate < TSPData.pm) {
                 Random rand=new Random();
-                int left=rand.nextInt(TSPData.CITY_NUM);
-                int right=rand.nextInt(TSPData.CITY_NUM);
+                int leftpos=rand.nextInt(TSPData.CITY_NUM);
+                int rightpos=rand.nextInt(TSPData.CITY_NUM);
                 String tmp;
-                tmp=point.genes[left];
-                point.genes[left] = point.genes[right];
-                point.genes[right] = tmp;
+                tmp=point.genes[rightpos];
+                point.genes[rightpos] = point.genes[leftpos];
+                point.genes[leftpos] = tmp;
             }
             point=point.next;
         }

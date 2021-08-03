@@ -1,8 +1,8 @@
 package Select;
 
-import TSPMain.GeneticAlgorithm;
-import TSPMain.Individual;
-import TSPMain.Population;
+import GeneticAlgorirhms.GAimplement1;
+import Representation.Individual;
+import Representation.Population;
 
 /**
  * 选择优秀物种（轮盘赌）
@@ -13,7 +13,7 @@ public class fitness_proportional implements selectOperator{
 	@Override
 	public Individual select(Population list) {
       //计算适应度
-      GeneticAlgorithm.calRate(list);
+      GAimplement1.calRate(list);
 
       //找出最大适应度物种
       float talentDis=Float.MAX_VALUE;

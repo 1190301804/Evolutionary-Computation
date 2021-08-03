@@ -2,8 +2,8 @@ package Mutation;
 
 import java.util.Random;
 
-import TSPMain.Individual;
-import TSPMain.Population;
+import Representation.Individual;
+import Representation.Population;
 import TSPMain.TSPData;
 
 /**
@@ -23,26 +23,26 @@ public class inversion implements MutateOperator{
             {
                 //寻找逆转左右端点
                 Random rand=new Random();
-                int left=rand.nextInt(TSPData.CITY_NUM);
-                int right=rand.nextInt(TSPData.CITY_NUM);
-                if(left > right)
+                int leftpos=rand.nextInt(TSPData.CITY_NUM);
+                int rightpos=rand.nextInt(TSPData.CITY_NUM);
+                if(leftpos > rightpos)
                 {
                     int tmp;
-                    tmp=left;
-                    left=right;
-                    right=tmp;
+                    tmp=leftpos;
+                    leftpos=rightpos;
+                    rightpos=tmp;
                 }
 
                 //逆转left-right下标元素
-                while(left < right)
+                while(leftpos < rightpos)
                 {
                     String tmp;
-                    tmp=point.genes[left];
-                    point.genes[left]=point.genes[right];
-                    point.genes[right]=tmp;
+                    tmp=point.genes[leftpos];
+                    point.genes[leftpos]=point.genes[rightpos];
+                    point.genes[rightpos]=tmp;
 
-                    left++;
-                    right--;
+                    leftpos++;
+                    rightpos--;
                 }
             }
             point=point.next;

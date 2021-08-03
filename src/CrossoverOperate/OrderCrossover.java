@@ -1,22 +1,22 @@
-package Crossover;
+package CrossoverOperate;
 
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 
-import TSPMain.Individual;
-import TSPMain.Population;
+import Representation.Individual;
+import Representation.Population;
 import TSPMain.TSPData;
 
 /**
  * Order Crossover
  */
 
-public class Order implements CrossoverOperator{
+public class OrderCrossover implements CrossoverOperator{
 
 	@Override
 	public void crossover(Population list) {
-    	//以概率pcl~pch进行
+    	//pcl~pch的概率
         float rate=(float)Math.random();
         if(rate > TSPData.pcl && rate < TSPData.pch)
         {           
@@ -63,9 +63,10 @@ public class Order implements CrossoverOperator{
             			j = j % TSPData.CITY_NUM;
             		}
             	}
-            	
+
+				point.next.genes = o2;
             	point.genes = o1;
-            	point.next.genes = o2;
+
             }
         	
         }

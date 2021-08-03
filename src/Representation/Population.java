@@ -1,4 +1,6 @@
-package TSPMain;
+package Representation;
+
+import TSPMain.TSPData;
 
 /**
  * 种群类
@@ -12,7 +14,7 @@ public class Population {
     public Population()
     {
         head=new Individual();
-        speciesNum=TSPData.SPECIES_NUM;
+        speciesNum= TSPData.SPECIES_NUM;
     }
 
     //添加物种

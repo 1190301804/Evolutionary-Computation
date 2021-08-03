@@ -1,6 +1,6 @@
-package Crossover;
+package CrossoverOperate;
 
-import TSPMain.Population;
+import Representation.Population;
 
 public interface CrossoverOperator {
 	public void crossover(Population list);
