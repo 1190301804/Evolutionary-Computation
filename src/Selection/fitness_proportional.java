@@ -1,4 +1,4 @@
-package Select;
+package Selection;
 
 import GeneticAlgorirhms.GAimplement1;
 import Representation.Individual;

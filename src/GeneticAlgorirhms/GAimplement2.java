@@ -5,8 +5,8 @@ import CrossoverOperate.CrossoverOperator;
 import CrossoverOperate.PMXCrossover;
 import Mutation.MutateOperator;
 import Mutation.insert;
-import Select.selectOperator;
-import Select.tournament_elitism;
+import Selection.selectOperator;
+import Selection.tournament_elitism;
 import Representation.Individual;
 import Representation.Population;
 import TSP_EA.TSPData;
@@ -27,7 +27,7 @@ public class GAimplement2 implements GA {
             MutateOperator mu = new insert();  
             mu.mutate(citylist);
             replace(citylist, temp);
-            if(i % 200 == 0)
+            if(i % 5000 == 0)
             	System.out.println("第"+i+"次迭代结果为："+getBest(citylist).distance);
 
         }   

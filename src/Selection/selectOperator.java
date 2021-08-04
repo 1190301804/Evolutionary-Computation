@@ -1,4 +1,4 @@
-package Select;
+package Selection;
 
 import Representation.Individual;
 import Representation.Population;

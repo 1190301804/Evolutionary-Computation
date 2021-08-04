@@ -2,8 +2,8 @@ package GeneticAlgorirhms;
 
 import CrossoverOperate.*;
 import Mutation.*;
-import Select.fitness_proportional;
-import Select.selectOperator;
+import Selection.fitness_proportional;
+import Selection.selectOperator;
 import Representation.Individual;
 import Representation.Population;
 import TSP_EA.TSPData;
@@ -62,7 +62,7 @@ public class GAimplement1 implements GA{
                 mu.mutate(citylist);
 
                 replace(citylist, temp);
-                if(i % 200 == 0)
+                if(i ==5000||i== 10000||i==20000)
                 	System.out.println("第"+i+"次迭代结果为："+getBest(citylist).distance);
 
             }   
