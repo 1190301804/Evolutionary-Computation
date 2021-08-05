@@ -3,7 +3,7 @@ package Selection;
 import java.util.ArrayList;
 import java.util.Random;
 
-import GeneticAlgorirhms.GAimplement1;
+import GeneticAlgorirhms.GAimplement3;
 import Representation.Individual;
 import Representation.Population;
 
@@ -27,7 +27,7 @@ public class tournament_elitism implements selectOperator{
 	@Override
     public Individual select(Population list){
         //计算适应度
-        GAimplement1.calRate(list);
+        GAimplement3.calRate(list);
         //找出最大适应度物种
         float talentDis=Float.MAX_VALUE;
         Individual talentSpecies=null;

@@ -2,11 +2,8 @@ package TSP_EA;
 import GeneticAlgorirhms.*;
 import Representation.Individual;
 import Representation.Population;
-import TSP_EA.TSPData;
 
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -21,9 +18,9 @@ public class Main {
         List<Integer> SpecieNumList = new ArrayList<>(Arrays.asList(10, 20, 50, 100));
 
         //三种实现方式
-        GA GAimplement1 = new GAimplement1();
+        GA GAimplement1 = new GAimplement3();
         GA GAimplement2 = new GAimplement2();
-        GA GAimplement3 = new GAimplement3();
+        GA GAimplement3 = new GAimplement1();
         List<GA> ImplementList = new ArrayList<>(Arrays.asList(GAimplement1, GAimplement2, GAimplement3));
 
         //10个文件

@@ -1,11 +1,8 @@
 package TSP_EA;
 
 
-import GeneticAlgorirhms.GA;
-import GeneticAlgorirhms.GAimplement1;
-import TSP_EA.Main;
+import GeneticAlgorirhms.GAimplement3;
 
-import javax.swing.*;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -51,7 +48,7 @@ public class BestOne {
                 System.out.println(fileName);
                 //记录运行时间作为cost
                 long start = System.currentTimeMillis();
-                float result= Main.SingleRun(filePath,new GAimplement1(),50);
+                float result= Main.SingleRun(filePath,new GAimplement3(),50);
                 long end = System.currentTimeMillis();
                 long timeElapsed = end - start;
                 System.out.println("\n运行时间："+timeElapsed+"ms");

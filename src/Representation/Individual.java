@@ -82,10 +82,10 @@ public class Individual {
     //打印路径
     public void printRate()
     {
-//        System.out.print("最短路线：");
-//        for(int i=0;i<genes.length;i++)
-//            System.out.print(genes[i]+"->");
-//        System.out.print(genes[0]+"\n");
+        System.out.print("最短路线：");
+        for(int i=0;i<genes.length;i++)
+            System.out.print(genes[i]+"->");
+        System.out.print(genes[0]+"\n");
         System.out.print("最短长度：" + distance);
     }
 

@@ -5,6 +5,7 @@ import CrossoverOperate.CrossoverOperator;
 import CrossoverOperate.PMXCrossover;
 import Mutation.MutateOperator;
 import Mutation.insert;
+import Mutation.inversion;
 import Selection.selectOperator;
 import Selection.tournament_elitism;
 import Representation.Individual;
@@ -24,7 +25,7 @@ public class GAimplement2 implements GA {
             Individual temp = se.select(citylist);
             CrossoverOperator co = new PMXCrossover();
             co.crossover(citylist);
-            MutateOperator mu = new insert();  
+            MutateOperator mu = new inversion();
             mu.mutate(citylist);
             replace(citylist, temp);
             if(i % 5000 == 0)

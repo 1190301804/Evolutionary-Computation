@@ -2,7 +2,7 @@ package TSP_EA;
 
 import java.io.IOException;
 
-import GeneticAlgorirhms.GAimplement1;
+import GeneticAlgorirhms.GAimplement3;
 import Representation.Individual;
 import Representation.Population;
 
@@ -21,7 +21,7 @@ public class TSPProblem {
         //载入数据
     	TSPData.loadData();
         //创建遗传算法驱动对象
-        GAimplement1 GA=new GAimplement1();
+        GAimplement3 GA=new GAimplement3();
         
         //创建初始种群
         Population speciesPopulation = new Population();

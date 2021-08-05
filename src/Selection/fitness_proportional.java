@@ -1,6 +1,6 @@
 package Selection;
 
-import GeneticAlgorirhms.GAimplement1;
+import GeneticAlgorirhms.GAimplement3;
 import Representation.Individual;
 import Representation.Population;
 
@@ -13,7 +13,7 @@ public class fitness_proportional implements selectOperator{
 	@Override
 	public Individual select(Population list) {
       //计算适应度
-      GAimplement1.calRate(list);
+      GAimplement3.calRate(list);
 
       //找出最大适应度物种
       float talentDis=Float.MAX_VALUE;
