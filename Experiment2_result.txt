@@ -1,0 +1,13 @@
+FileName		Result		Cost
+eil101.tsp		708.141		1380
+eil51.tsp		471.25748		615
+eil76.tsp		601.87085		854
+kroA100.tsp		23647.764		1115
+kroC100.tsp		23037.258		1104
+kroD100.tsp		23661.828		1106
+lin105.tsp		15312.939		1174
+pcb442.tsp		100541.57		5485
+pr2392.tsp		4056029.0		48713
+st70.tsp		737.4578		803
+
+averageCost:    6234.9		    standardDeviation: 14223.298200136282
